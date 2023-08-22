@@ -1,23 +1,25 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Bienvenido a tu programa para saber que tipo de triagulo es");
-        System.out.println("Ingresa El lado A de tu triangulo");
+        System.out.println("Bienvedio a tu programa para determinar que tipo de triagulo tienes");
+        System.out.println("A continuacion ingresa el lado A de tu triagulo");
         double ladoa = sc.nextDouble();
-        System.out.println("Ingresa El lado B de tu triangulo");
+        System.out.println("A continuacion ingresa el lado B de tu triagulo");
         double ladob = sc.nextDouble();
-        System.out.println("Ingresa El lado C de tu triangulo");
-        double ladoC = sc.nextDouble();
-        if ((ladoa==ladob)&& (ladob==ladoC)){
-            System.out.println("Tu triangulo es equilatero");
-        }
-        else if ((ladoa=ladob) || (ladoC == ladoa)){
-            System.out.println("el año "+anno+ " es bisciesto");
+        System.out.println("A continuacion ingresa el lado C de tu triagulo");
+        double ladoc = sc.nextDouble();
+        if ((ladoa+ladob>ladob)&&(ladoa+ladoc>ladob)&&(ladob+ladoc>ladoa)) {
+            if ((ladoa == ladob) && (ladob == ladoc)) {
+                System.out.println("tu triagulo es valido y es un triagulo equilatero osea tiene 3 lados iguales");
+            } else if (((ladoa == ladob) || (ladob == ladoc) || (ladoa == ladoc))) {
+                System.out.println("tu triangulo es valido y es un triangulo isoceles osea tiene 2 lados iguales");
+            } else if (((ladoa != ladob) && (ladob != ladoc) && (ladoc != ladoa))) {
+                System.out.println("tu triangulo es valido y es un triangulo escaleno osea tiene 3 lados diferentes");
+            }
         }else{
-            System.out.println("el año "+anno+ " NO es bisciesto");
+            System.out.println("Tu triangulo es Invalido ya que no cumple con la desigualdad triangular");
         }
-
     }
+
 }
